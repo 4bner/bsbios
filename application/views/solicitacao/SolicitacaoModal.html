@@ -1,0 +1,28 @@
+<div class="modal" id="modal_solicitacao" role="dialog">
+	<div class="modal-dialog">
+ 		<div class="modal-content">
+    		
+    		<div class="modal-header">
+       		 	<button type="button" class="close" data-dismiss="modal">&times;</button>
+       			<h4 class="modal-title">Solicitar Altera&ccedil;&atilde;o</h4>
+      		</div>
+      		
+      		<div class="modal-body row">
+        		<form name="formSolicitacao" class="form-horizontal" style="margin-right: 10px; margin-left: 10px;" novalidate>
+			   		<div class="control-group">
+						<label class="control-label" for="observacao">Observa&ccedil;&atilde;o:</label>
+						<textarea style="resize: none;" maxlength="500" class="form-control" ng-model="observacao" rows="6" id="observacao"></textarea>
+					</div>
+        		</form>
+      		</div>
+      		
+      		<div class="modal-footer">
+    			<div class="alert alert-warning fade in">
+				   	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			    	<span class="text-left"><strong>Warning!</strong> This alert box could indicate a warning that might need attention.</span>
+				</div>
+      			<button class="btn btn-primary" ng-disabled="formSolicitacao.$invalid" ng-click="solicitar(observacao)">Solicitar</button>
+      		</div>
+    	</div>
+  	</div>
+</div>

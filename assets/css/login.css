@@ -1,0 +1,67 @@
+html { 
+	height: 100%;
+	min-height: 100%;
+}
+
+body {
+	background: url('../img/bsbios_fundo_5.jpg') no-repeat center center fixed;
+	font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-weight: 400;
+    background-position: center center; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    min-height: 100%;
+}
+
+.login-block {
+	margin-top: 180px;
+    background: #fff;
+    opacity: 0.85;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top: 8px solid #222;
+    box-shadow: inset 1px 1px 18px 3px rgba(25, 50, 50, 0.36);
+}
+
+.login-block h1 {
+    color: #000;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #b3b3b3;
+    font-size: 14px;
+    padding: 0 20px 0 50px;
+    outline: none;
+}
+
+.login-block input#login {
+    background: #fff url('../img/u0XmBmv.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#login:focus {
+    background: #fff url('../img/u0XmBmv.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#senha {
+    background: #fff url('../img/Qf83FTt.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#senha:focus {
+    background: #fff url('../img/Qf83FTt.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #222;
+}

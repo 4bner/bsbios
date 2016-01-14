@@ -1,0 +1,39 @@
+<loading></loading>
+
+<div ng-hide="loading" class="ng-hide cartao col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+	
+	<form name="formUsuario" novalidate>
+	
+		<div class="form-group text-center">
+          	<img ng-src="{{imgSrc}}" class="avatar img-circle" alt="avatar" style="margin-bottom: 10px; width: 150px; height: 150px;">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse&hellip; <input type="file" file-model="myFile">
+                    </span>
+                </span>
+                <input type="text" class="form-control" readonly ng-model="myFile.name">
+            </div>
+            <button class="btn btn-primary" ng-click="uploadFile()">Upload</button>
+        </div>
+        
+   	    <div class="form-group" show-errors>
+		        <label class="control-label">Email</label>
+	        	<input class="form-control" type="email" name="email" ng-model="usuario.email" required placeholder="Email" />
+     	</div>
+       	
+       	<div class="form-group" show-errors>
+	            <label class="control-label">Nome</label>
+	            <input type="text" class="form-control" name="nome" id="inputNome" ng-model="usuario.nome" required placeholder="Nome">
+       	</div>
+       	
+      	<div show-errors>
+            <label class="control-label">Senha</label>
+            <input type="password" class="form-control" name="senha" id="inputSenha" ng-model="usuario.senha" required placeholder="Senha" ngMinlength="8">
+            <span class="help-block"><small>A senha deve ter no m&iacute;nimo 8 caracteres</small></span>
+       	</div>
+       	
+       	<button class="btn btn-primary" style="float: right; margin-top: 15px;" ng-disabled="formUsuario.$invalid" ng-click="salvar()">Salvar</button>
+	</form>
+
+</div>

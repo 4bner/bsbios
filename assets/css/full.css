@@ -1,0 +1,180 @@
+.cartao {
+    background: #D4D6D6;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Source Sans Pro',sans-serif;
+}
+
+.white-icon, .white-icon a {color: white;}
+.cbp-spmenu {
+	position: fixed;
+	background-color: #1e282c;
+	background-image: url('../img/sep-half.png');
+}
+
+.cbp-spmenu-vertical {
+	width: 230px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+}
+.cbp-spmenu-left {left: -230px;}
+.cbp-spmenu-left.cbp-spmenu-open {left: 0px;}
+/*.cbp-spmenu-push { EMPURRA CONTEUDO À DIREITA
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}*/
+.cbp-spmenu-push-toright {left: 230px;}
+.panel {
+	border: 0;
+	box-shadow: none;
+}
+.panel-default > .panel-heading {
+	background-color: #1e282c;
+	border-left: 3px solid transparent;
+}
+.panel-default > .panel-heading:hover {
+	border-left-color: #6595BC;
+	background: #1e282c;
+	color: #fff;
+}  
+.panel-default > .panel-heading  a {
+	color: #FFF;
+	display: block;
+	padding: 8px 0px;
+}
+.list-group-item {
+	padding-left: 25px;
+	border: 0;
+	background: #2c3b41;
+}
+.list-group-item:hover {
+	background: #365167;
+    padding-left: 15px;
+	transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: linear;	
+}
+a.list-group-item {color: #FFF;}
+a.list-group-item:hover {
+	background: #5881A2;
+	color: #FFF;
+}	
+.list-group-item.no-border {border: 0;}	
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px
+}
+.list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.cbp-spmenu, .cbp-spmenu-push {
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+}
+
+.modal {overflow-y: auto;}
+.modal-open {overflow: auto;}
+.modal-open[style] {padding-right: 0px !important;}
+
+.form-group .help-block {
+  display: none;
+}
+
+.form-group.has-error .help-block {
+  display: block;
+}
+
+.hiddenRow {
+    padding: 0 !important;
+}
+
+.sortIcon {
+	float: right;
+	margin-left: 5px;
+}
+
+.btn-file {
+	  position: relative;
+	  overflow: hidden;
+}
+.btn-file input[type=file] {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  min-width: 100%;
+	  min-height: 100%;
+	  font-size: 100px;
+	  text-align: right;
+	  filter: alpha(opacity=0);
+	  opacity: 0;
+	  background: red;
+	  cursor: inherit;
+	  display: block;
+}
+
+.loader {
+    margin-top: 0; /* to clean up, just in case IE later supports valign! */
+    vertical-align: middle;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.dash-unit {
+    padding-bottom: 5px;
+    border: 1px solid #383737;
+    background-image: url('../img/sep-half.png');
+    background-color: #357ca5;
+    height: 120px;
+}
+
+.dash-unit dtitle {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+    padding: 0;
+}
+
+.dash-unit doutput {
+	position: absolute;
+	padding-top: 25px;
+	color: white;
+	font-size: 40px;
+}
+
+select::-ms-expand {
+  background-color: #fff;
+  border: none;
+}
+
+.user-form-img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: 90px;
+	width: 90px;
+}
+
+.user-form-name {
+    font-weight: 600;
+    color: #444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.user-table-img {
+	float: left;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-right: 10px;
+}

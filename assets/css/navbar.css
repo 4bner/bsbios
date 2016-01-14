@@ -1,0 +1,274 @@
+.main-header {
+    position: relative;
+    max-height: 100px;
+    z-index: 1030;
+}
+
+.main-header .logo {
+    -webkit-transition: width .3s ease-in-out;
+    -o-transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+    display: block;
+    float: left;
+    height: 54.8px;
+    font-size: 20px;
+    line-height: 54.8px;
+    text-align: center;
+    width: 230px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 0 15px;
+    font-weight: 300;
+    overflow: hidden;
+    background-color: #357ca5;
+	color: #fff;
+	border-bottom: 0 solid transparent;
+	background-image: url('../img/sep-half.png');
+}
+
+.main-header > .navbar {
+    -webkit-transition: margin-left .3s ease-in-out;
+    -o-transition: margin-left .3s ease-in-out;
+    transition: margin-left .3s ease-in-out;
+    margin-bottom: 0;
+    border: none;
+    min-height: 54.8px;
+    border-radius: 0;
+    background-color: #6595BC;
+    background-image: url('../img/sep-half.png');
+}
+
+.main-header .sidebar-toggle {
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    padding: 15px 15px;
+}
+
+.main-header .navbar-custom-menu, .main-header .navbar-right {
+    float: right;
+}
+
+.navbar-custom-menu > .navbar-nav > li {
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+
+	.main-header .logo, .main-header .navbar {
+	    width: 100%;
+	    float: none;
+	}
+
+	.main-header .navbar-custom-menu {
+    	float: right;
+    	padding: 0;
+	}
+	.navbar-nav > .widget-menu > .dropdown-menu {
+		background-color: #fff;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.navbar-custom-menu > .navbar-nav {
+   	 	float: right;
+   	 	margin: 0px;
+	}
+	
+	.navbar-custom-menu > .navbar-nav > li {
+	    position: static;
+   	    float: left;
+	}
+	
+	.navbar-custom-menu .navbar-nav > li > a {
+	    padding-top: 15px;
+	    padding-bottom: 15px;
+	    line-height: 20px;
+	}
+}
+
+.navbar-nav > .user-menu .user-image {
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+}
+.navbar-nav > .user-menu > .dropdown-menu, .navbar-nav > .user-menu > .dropdown-menu > .user-body {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.navbar-nav > .user-menu > .dropdown-menu {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 1px 0 0 0;
+    border-top-width: 0;
+    width: 280px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+    height: 175px;
+    padding: 10px;
+    text-align: center;
+    background-color: #3c8dbc;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+    height: 175px;
+    padding: 10px;
+    text-align: center;
+    background-color: #3c8dbc;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
+    z-index: 5;
+    height: 90px;
+    width: 90px;
+    border: 3px solid;
+    border-color: transparent;
+    border-color: rgba(255,255,255,0.2);
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+    z-index: 5;
+    color: #fff;
+    color: rgba(255,255,255,0.8);
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > small {
+    display: block;
+    font-size: 12px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer {
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer::before, .navbar-nav > .user-menu > .dropdown-menu > .user-footer::after {
+    content: " ";
+    display: table;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer::after {
+    clear: both;
+}
+
+.main-header .navbar .nav > li > a > .label {
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    text-align: center;
+    font-size: 11px;
+    padding: 2px 3px;
+    line-height: .9;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu {
+    width: 280px;
+    padding: 0 0 0 0;
+    margin: 0;
+    top: 100%;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li.header {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #ffffff;
+    padding: 7px 10px;
+    border-bottom: 1px solid #f4f4f4;
+    color: #444444;
+    font-size: 14px;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li {
+    position: relative;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > div .slimScrollDiv {
+	position: relative; 
+	overflow: hidden; 
+	width: auto; 
+	height: 200px;	
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li .menu {
+    max-height: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li .menu > li > a {
+    margin: 0;
+    padding: 10px 10px;
+    display: block;
+    white-space: nowrap;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li .menu > li > a::before {
+    content: " ";
+    display: table;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li .menu > li > a::after {
+    clear: both;
+    content: " ";
+    display: table;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li .menu > li > a > div > img {
+    margin: auto 10px auto auto;
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li .menu > li > a > h4 {
+    padding: 0;
+    margin: 0 0 0 45px;
+    color: #444444;
+    font-size: 15px;
+    position: relative;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li .menu > li > a > h4 > small {
+    color: #999999;
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li .menu > li > a > p {
+    margin: 0 0 0 45px;
+    font-size: 12px;
+    color: #888888;
+}
+
+.navbar-nav > .widget-menu > .dropdown-menu > li.footer > a {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-size: 12px;
+    background-color: #fff;
+    padding: 7px 10px;
+    border-bottom: 1px solid #eeeeee;
+    color: #444 !important;
+    text-align: center;
+}
+
+.navbar-custom-menu .navbar-nav > li > a > .glyphicon {
+    font-size: 1.4em;
+}

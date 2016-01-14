@@ -1,0 +1,236 @@
+<style>
+	
+	@media screen and (max-width: 767px) {
+		.padding-navbar {
+			padding-top: 109.6px;
+		}
+	}
+	
+	@media screen and (min-width: 768px) {
+		.padding-navbar {
+			padding-top: 54.8px;
+		}
+	}
+	
+	#app {
+	    background: url('../bsbios/assets/img/bg4.png') no-repeat center center fixed;
+	    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+		font-weight: 400;
+		
+		-moz-background-size: cover;
+		-webkit-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-position: center center;
+	}
+</style>
+
+<loading></loading>
+<div class="wrapper ng-hide" ng-hide="loading">
+	
+	<header class="main-header">	
+    	<nav class="navbar navbar-fixed-top" role="navigation">
+    	
+	    	<a href="#inicio" class="logo">
+	     	 	<span><b>BS</b>Bios</span>
+	    	</a>
+    	
+	      	<a ng-click="showLeftPush()" target="_self" class="sidebar-toggle" data-target="#navbar" role="button">
+	        	<span class="glyphicon glyphicon-menu-hamburger white-icon"><span class="sr-only">Toggle menu</span></span>
+	      	</a>
+	      	
+	      	<div class="navbar-custom-menu">
+		      	<ul class="nav navbar-nav">
+		      	
+		        	<li class="dropdown widget-menu ng-hide" ng-hide="!acessoSolicitacoes">
+			            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-click="buscarSolicitacoes()">
+			              	<i class="glyphicon glyphicon-globe white-icon"></i>
+			            	<span class="label label-success">{{numeroSolicitacoes}}</span>
+			            </a>
+			            
+			            <ul class="dropdown-menu">
+			            	<li class="header">Voc&ecirc; tem {{numeroSolicitacoes}} solicita&ccedil;&otilde;es em aberto</li>
+			            	<li>
+			            		<div class="slimScrollDiv">
+					            	<ul class="menu" >
+						            	<li ng-repeat="solicitacao in solicitacoes track by $index">
+							            	<a href="#" target="_self" ng-click="abrirModalSolicitacao(solicitacao)")>
+						                      	<div class="pull-left">
+						                        	<img ng-src="./uploads/profile/{{solicitacao.profile_pic | obterProfilePic}}" class="img-circle" alt="User Image">
+						                      	</div>
+						                      	<h4>{{solicitacao.usu_nome}}
+						                      		<small><i class="glyphicon glyphicon-time"></i>{{solicitacao.tempo | obterTempoDecorrido}}</small>
+						                      	</h4>
+						                      	<p>{{solicitacao.tipo_solicitacao | obterTipoSolicitacao}}</p>
+						                    </a>
+					                  	</li>
+					            	</ul>
+				            	</div>
+			            	</li>
+			            	<li class="footer"><a href="#solicitacao">Ver todas as solicita&ccedil;&otilde;es</a></li>
+			        	</ul>
+		            </li>
+		            
+		            <li class="dropdown widget-menu">
+			            <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-click="buscarSolicitacoes()">
+			              	<i class="glyphicon glyphicon-envelope white-icon"></i>
+			            	<span class="label label-warning">0</span>
+			            </a>
+			            
+			            <ul class="dropdown-menu">
+			            	<li class="header">Voc&ecirc; tem 0 mensagens n&atilde;o lidas</li>
+			            	<li>
+			            		<div class="slimScrollDiv">
+					            	<ul class="menu" >
+						            	<li ng-repeat="solicitacao in solicitacoes track by $index">
+							            	<a href="#" target="_self" ng-click="abrirModalSolicitacao(solicitacao)")>
+						                      	<div class="pull-left">
+						                        	<img ng-src="./uploads/profile/{{solicitacao.profile_pic | obterProfilePic}}" class="img-circle" alt="User Image">
+						                      	</div>
+						                      	<h4>{{solicitacao.usu_nome}}
+						                      		<small><i class="glyphicon glyphicon-time"></i>{{solicitacao.tempo | obterTempoDecorrido}}</small>
+						                      	</h4>
+						                      	<p>{{solicitacao.tipo_solicitacao | obterTipoSolicitacao}}</p>
+						                    </a>
+					                  	</li>
+					            	</ul>
+				            	</div>
+			            	</li>
+			            	<li class="footer"><a href="#solicitacao">Ver todas as mensaens</a></li>
+			        	</ul>
+		            </li>
+		            
+			      	<li class="dropdown user user-menu">
+			            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="height: 54.8px;">
+		             	 	<img ng-src="{{imgSrc}}" class="user-image" alt="User Image">
+			              	<span style="color: white;" class="hidden-xs">{{usuario.nome}}</span>
+			            </a>
+			           
+			            <ul class="dropdown-menu">
+		              		<li class="user-header">
+			                	<img ng-src="{{imgSrc}}" class="img-circle" alt="User Image">
+			                	<p>{{usuario.nome}}
+			                  		<small>Cadastrado em {{usuario.data_cadastro | dateFromMySql | date:'dd/MM/yyyy'}}</small>
+			                	</p>
+			              	</li>
+			              	
+			              	<li class="user-footer">
+				                <div class="pull-left">
+				                  	<a href="#perfil" class="btn btn-default btn-flat">Perfil</a>
+				                </div>
+				                <div class="pull-right">
+				                  	<a href="#" ng-click="logout()" class="btn btn-default btn-flat">Sair</a>
+				                </div>
+		              		</li>
+			        	</ul>
+		            </li>
+		      	</ul>
+	      	</div>
+	    </nav>
+    </header>
+    
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left padding-navbar" id="cbp-spmenu-s1">
+		
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="hPricing">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#smPricing" target="_self" aria-expanded="true" aria-controls="smPricing">
+							<i class="glyphicon glyphicon-stats pull-right"></i> PREFICICA&Ccedil;&Atilde;O
+						</a>
+						</h4>
+				</div>
+				<div id="smPricing" class="panel-collapse collapse" role="tabpanel" aria-labelledby="hPricing">
+					<div>
+						<a href="#basis" class="list-group-item">BASIS</a>
+					    <a href="#custos_fin" class="list-group-item">CUSTOS FINANCEIROS</a>
+					    <a href="#custos_crush" class="list-group-item">CUSTOS CRUSH</a>
+					    <a href="#fx" class="list-group-item">D&Oacute;LAR FORWARD</a>
+					    <a href="#logistica" class="list-group-item">LOG&Iacute;STICA</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="hCadastros">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#smCadastros" target="_self" aria-expanded="true" aria-controls="smCadastros">
+							<i class="glyphicon glyphicon-cog pull-right"></i> CADASTROS
+						</a>
+					</h4>
+				</div>
+				<div id="smCadastros" class="panel-collapse collapse" role="tabpanel" aria-labelledby="hCadastros">
+					<div><a href="#itinerario" class="list-group-item">ITINER&Aacute;RIO</a></div>
+					<div><a href="#permissao" class="list-group-item">PERMISS&Atilde;O DE ACESSO</a></div>
+					<div><a href="#usuario" class="list-group-item">USU&Aacute;RIO</a></div>
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="hCadastros">
+					<h4 class="panel-title">
+						<a href="#" target="_self" aria-expanded="true">
+							<i class="glyphicon glyphicon-comment pull-right"></i> COMUNICA&Ccedil;&Atilde;O
+						</a>
+					</h4>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>
+
+<div class="modal fade" id="modal_solicitacao" role="dialog">
+	<div class="modal-dialog">
+ 		<div class="modal-content">
+    		
+    		<div class="modal-header">
+       		 	<button type="button" class="close" data-dismiss="modal">&times;</button>
+       			<h4 class="modal-title">Solicita&ccedil;&atilde;o</h4>
+      		</div>
+      		
+      		<div class="modal-body">
+        		<form name="formUsuario" novalidate>
+        			
+     				<div>
+        				<div class="col-xs-12 col-sm-3 text-center">
+                        	<img ng-src="./uploads/profile/{{solicitacao.profile_pic | obterProfilePic}}" class="user-form-img text-center" alt="User Image">
+                   			<a class="user-form-name text-center">{{solicitacao.usu_nome}}</a></li>
+        				</div>	
+        				<div class="col-xs-12 col-sm-9">
+	        				<div class="form-group" show-errors>
+					            <label class="control-label">Observa&ccedil;&atilde;o</label>
+					           	<textarea style="resize: none;" class="form-control" ng-model="solicitacao.observacao" rows="3" disabled></textarea>
+					        </div>
+        				</div>
+        			</div>
+			        
+			        <div class="form-group" show-errors>
+			            <label class="control-label">Data da solicita&ccedil;&atilde;o</label>
+			            <input type="text" class="form-control" value="{{solicitacao.data_solicitacao | dateFromMySql | date:'dd/MM/yyyy HH:mm:ss'}}" disabled>
+			        </div>
+			        
+			        <div class="form-group" show-errors>
+			            <label class="control-label">Descri&ccedil;&atilde;o</label>
+			            <input type="text" class="form-control" value="{{solicitacao.tipo_solicitacao | obterTipoSolicitacao}}" disabled>
+			        </div>
+			        
+			        
+			        <div class="form-group" show-errors>
+			            <label class="control-label">Resposta</label>
+			           	<textarea style="resize: none;" class="form-control" ng-model="solicitacao.resposta" rows="3"></textarea>
+			        </div>
+        		</form>
+      		</div>
+      		
+      		<div class="modal-footer">
+      			<button style="float:left;" class="btn btn-danger" ng-click="deferirSolicitacao('3')">Rejeitar</button>
+      			<button class="btn btn-success" ng-click="deferirSolicitacao('2')">Aprovar</button>
+      		</div>
+    	</div>
+  	</div>
+</div>
+<div class="container-fluid">
+	<div class="main" ui-view="conteudo" style="height: 100%" autoscroll="false">
+	</div>
+</div>
